@@ -1,0 +1,65 @@
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+}
+
+h2{
+    font-weight: bold;
+}
+
+.all-content{
+    padding: 15px 35px;
+    display: flex;
+    justify-content: space-between;
+}
+.sideNav{
+    background-color: white;
+    border-radius: 5px;
+    height: fit-content;
+    width: 25vw;
+}
+.sideNav__content{
+    padding: 15px 40px;
+}
+.header-1{
+    display: flex;
+    align-items: center;
+}
+.little{
+    width: 15%;
+}
+h3{
+    color: #bdbdbd;
+    font-size: 12px;
+}
+h6{
+    margin-left: 10px;
+    font-weight: lighter;
+    font-size: 15px;
+}
+.add{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom:-10%;
+}
+.header-1 > .active1{
+    color: teal;
+    background-color: #bdbdbd;
+    width: 30%;
+}
+.employee-card{
+
+}
+
+.card{
+    background-color: #ffffff;
+    border-radius: 3px;
+    width: 60vw;
+    height: fit-content;
+}
+.card-content{
+  padding: 10px 20px;
+}
