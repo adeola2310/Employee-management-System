@@ -1,0 +1,24 @@
+.card{
+    background-color: #ffffff;
+    border-radius: 3px;
+    width: 65vw;
+    margin-bottom: 20px;
+    height: fit-content;
+}
+.card:hover{
+    transform: translateX(-25px);
+}
+.card-content{
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.name{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+span{
+    margin-top: -35px;
+}

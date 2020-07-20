@@ -19,6 +19,7 @@ h2{
     border-radius: 5px;
     height: fit-content;
     width: 25vw;
+    /*position: fixed;*/
 }
 .sideNav__content{
     padding: 15px 40px;
@@ -53,13 +54,9 @@ h6{
 .employee-card{
 
 }
+.container{
+    display: flex;
+    flex-direction: column;
+    /*position: absolute;*/
+}
 
-.card{
-    background-color: #ffffff;
-    border-radius: 3px;
-    width: 60vw;
-    height: fit-content;
-}
-.card-content{
-  padding: 10px 20px;
-}

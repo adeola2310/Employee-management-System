@@ -3,15 +3,21 @@ import './App.css';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Employee from "./Pages/Employee/Employee";
 import Calender from "./Pages/Calender/Calender";
+import {Provider} from "react-redux";
+import store from "./redux/store";
 
 function App() {
   return (
-      <BrowserRouter>
-          <Switch>
-              <Route path="/employee"  component={Employee}/>
-              <Route path="/" exact component={Calender}/>
-          </Switch>
-      </BrowserRouter>
+      <Provider store={store}>
+          <BrowserRouter>
+              <Switch>
+                  {/*<Route path="/employee"  component={Employee}/>*/}
+                  <Route path="/employee" exact component={Employee}/>
+              </Switch>
+          </BrowserRouter>
+
+      </Provider>
+
   );
 }
 
