@@ -19,6 +19,7 @@ h2{
     border-radius: 5px;
     height: fit-content;
     width: 25vw;
+    overflow-y: hidden;
     /*position: fixed;*/
 }
 .sideNav__content{

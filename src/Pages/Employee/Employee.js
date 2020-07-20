@@ -7,12 +7,20 @@ import image2 from "../../images/loop-studios.svg";
 import EmployeeCard from "../../Components/EmployeeCard/EmployeeCard";
 import {connect} from "react-redux";
 import getAllUserThunk from "../../redux/actions/fetchAllEmployees";
+import Loader from "../../Components/Loader/Loader";
+import ReactPaginate from 'react-paginate';
 
 
 
 const Employee = ({employees, getAllUserThunk})=>{
 
-    const [isLoading, setIsLoading] = useState(false)
+
+
+    const [isLoading, setIsLoading] = useState(false);
+    const [offSet, setOffSet] = useState(0)
+    const [perPage, setPerPage] = useState(5);
+    const [currentPage, setCurrentPage]  = useState(0);
+    // const [employees, setEmployees] = useState([])
 
     const fetchData = async ()=>{
         await getAllUserThunk();
@@ -23,9 +31,18 @@ const Employee = ({employees, getAllUserThunk})=>{
     }, []);
 
 
+    // const handlePageClick = (e) => {
+    //     const selectedPage = e.selected;
+    //     const offset = selectedPage * perPage;
+    //     setCurrentPage(selectedPage)
+    //     setOffSet(offset)
+    // };
+
+
     console.log("EMPLOYESSS",employees)
 
     return (
+
         <div>
             <Layout/>
             <div className="title">
@@ -85,18 +102,36 @@ const Employee = ({employees, getAllUserThunk})=>{
                     </div>
                 </div>
                 <div className="container">
+                    {isLoading ? <Loader/> :
+                        (
 
-                    {employees && employees?.data?.map((employer, index)=>(
-                        <EmployeeCard
-                            key={employer.id}
-                            name={employer.login}
-                            img={employer.avatar_url}
-                        />
-                    ))}
+
+                            employees && employees?.data?.map((employer, index)=>(
+                            <EmployeeCard
+                                key={employer.id}
+                                name={employer.login}
+                                img={employer.avatar_url}
+                            />
+                        )))
+                    }
 
                 </div>
 
             </div>
+
+
+            {/*<ReactPaginate*/}
+            {/*    previousLabel={"prev"}*/}
+            {/*    nextLabel={"next"}*/}
+            {/*    breakLabel={"..."}*/}
+            {/*    breakClassName={"break-me"}*/}
+            {/*    pageCount={this.state.pageCount}*/}
+            {/*    marginPagesDisplayed={2}*/}
+            {/*    pageRangeDisplayed={5}*/}
+            {/*    onPageChange={handlePageClick}*/}
+            {/*    containerClassName={"pagination"}*/}
+            {/*    subContainerClassName={"pages pagination"}*/}
+            {/*    activeClassName={"active"}/>*/}
 
         </div>
     )

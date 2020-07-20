@@ -11,7 +11,7 @@ function App() {
       <Provider store={store}>
           <BrowserRouter>
               <Switch>
-                  {/*<Route path="/employee"  component={Employee}/>*/}
+                  <Route path="/" exact  component={Calender}/>
                   <Route path="/employee" exact component={Employee}/>
               </Switch>
           </BrowserRouter>

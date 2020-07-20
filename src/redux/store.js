@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-// import LogRocket from 'logrocket';
+import LogRocket from 'logrocket';
 import { createLogger } from 'redux-logger';
 import rootReducer from './reducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -13,7 +13,7 @@ const initialState = {};
 const devTools =
     // eslint-disable-next-line no-undef
     process.env.NODE_ENV === 'production'
-        ? applyMiddleware(...middlewares)
+        ? applyMiddleware(...middlewares, LogRocket.reduxMiddleware())
         : composeWithDevTools(applyMiddleware(...middlewares));
 
 const store = createStore(rootReducer, initialState, devTools);
